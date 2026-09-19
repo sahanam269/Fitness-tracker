@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Fitness Activity Tracker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏃 Student Fitness Activity Tracker</h1>
+        <p>Track your daily fitness activities</p>
+    </header>
+
+    <main>
+
+        <!-- Add Activity -->
+        <section class="card">
+            <h2>➕ Add Fitness Activity</h2>
+
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Activity</label>
+            <select id="activity">
+                <option value="">Select Activity</option>
+                <option value="Walking">🚶 Walking</option>
+                <option value="Running">🏃 Running</option>
+                <option value="Cycling">🚴 Cycling</option>
+                <option value="Yoga">🧘 Yoga</option>
+                <option value="Exercise">💪 Exercise</option>
+            </select>
+
+            <label>Duration (minutes)</label>
+            <input type="number" id="duration" placeholder="Example: 30">
+
+            <label>Steps</label>
+            <input type="number" id="steps" placeholder="Example: 5000">
+
+            <label>Date</label>
+            <input type="date" id="date">
+
+            <button onclick="addActivity()">Add Activity</button>
+
+        </section>
+
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <h3>Total Steps</h3>
+                <p id="totalSteps">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Duration</h3>
+                <p id="totalDuration">0 min</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Activities</h3>
+                <p id="totalActivities">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>🔥 Current Streak</h3>
+                <p id="currentStreak">0 days</p>
+            </div>
+
+        </section>
+
+
+        <!-- Activity History -->
+        <section class="card">
+
+            <h2>📋 Activity History</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Activity</th>
+                            <th>Duration</th>
+                            <th>Steps</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="activityTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Fitness Activity Tracker © 2026</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
